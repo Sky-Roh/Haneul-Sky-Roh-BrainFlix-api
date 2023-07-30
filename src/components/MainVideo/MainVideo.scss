@@ -1,0 +1,22 @@
+@use '../../styles/partials/variables.scss' as *;
+// @use '../../styles/partials/fonts.scss' as *;
+ @use '../../styles//partials/mixins.scss' as *;
+
+ .video {
+    &__background {
+        background-color: $brainFlix-DarkBlack;
+
+        @include tablet {
+            padding: 0 $tablet-side-padding;
+        }
+        @include desktop {
+            padding: 0 12.5rem;
+        }
+    }
+
+    &__image {
+        width: 100%;
+        object-fit: cover; 
+        aspect-ratio: 16/9;
+    }
+}
