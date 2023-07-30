@@ -1,0 +1,91 @@
+@use '../../styles/partials/variables.scss' as *;
+@use '../../styles/partials/fonts.scss' as *;
+@use '../../styles//partials/mixins.scss' as *;
+
+  .original-comment {
+    padding: 0 $mobile-padding;
+
+    @include tablet {
+      margin: 0 $tablet-side-padding;
+      padding: 0;
+    }
+    @include desktop {
+      margin: 0;
+    }
+
+  
+    &__container {
+      width: 100%;
+      display: flex;
+      border-top: 1px solid $mercury;
+      padding: $mobile-padding 0;
+
+      @include desktop {
+        padding-right: $tablet-side-padding;
+      }
+    }
+
+    &__img {
+      display: flex;
+      flex-shrink: 0;
+      background-color: $mercury;
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 50%;
+      gap: 0.5rem;
+
+    }
+    &__user-card, &__head, &__CommentText {
+        width: 100%;
+
+    }
+    &__user-card {
+      display: flex;
+      flex-wrap: wrap;
+      padding-left: 1rem;
+      overflow-wrap: anywhere;
+    }
+    &__head {
+      @include flex(row, none, space-between);
+      padding-bottom: $mobile-padding;
+    }
+  
+    &__CommentText {
+      @include mobileBodyCopy;
+      @include tablet {
+        @include bodyCopy;
+      }
+    }
+
+    &__img-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 18rem;
+    }
+
+    &__like-icon {
+      margin: 0.5rem 0;
+      max-width: 5vw;
+      min-height: 5vh;
+    }
+
+    &__delete-icon {
+      margin: 0.5rem 0;
+      max-width: 4vw;
+      min-height: 5vh;
+    }
+    &__name {
+      @include mobileSubheader;
+      @include tablet {
+        @include bodyCopy;
+      }
+    }
+    &__date {
+      @include mobileBodyCopy;
+      color: $silver;
+
+      @include tablet {
+        @include bodyCopy;
+      }
+    }
+  }
