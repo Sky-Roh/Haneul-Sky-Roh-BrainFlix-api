@@ -1,0 +1,141 @@
+@use '../../styles/partials/variables.scss' as *;
+@use '../../styles/partials/fonts.scss' as *;
+@use '../../styles//partials/mixins.scss' as *;
+
+.nav {
+    @include flex(column, center, space-between);
+    padding: 0 $mobile-padding;
+
+    @include tablet {
+        flex-direction: row;
+        padding: 0 $tablet-side-padding;
+    }
+    
+    @include desktop {
+        margin: 0 auto;
+        padding: 0 7rem;
+    }
+    &__logo {
+        
+        @include desktop {
+            width: 50%;
+        }
+    }
+
+    &__logo--img {
+        max-height: 1.5625rem;
+        max-width: 7.5rem;
+        margin-top: $mobile-padding;
+
+        @include tablet {
+            margin-top: 0;
+        }
+    }
+
+    &__menu {
+        @include flex(column, 0, 0);
+        padding-bottom: $mobile-padding;
+        width: 100%;
+
+        @include tablet {
+            width: auto;
+            padding: 0;
+        }
+    }
+
+    &__form {
+        @include flex(column, none, none);
+        @include tablet {
+           @include flex(row, center, center);
+        }
+    }
+
+    &__search-box {
+        @include textStyleKit(0.8rem, 1.25rem, $font-regular);
+        width: 100%;
+        height: 2.5rem; // button height       
+        padding: 0.5rem 0 0.5rem 2.2rem;
+        border-radius: 0.25rem;
+        border: 1px solid $mercury;
+        background: url("../../assets/icons/search.svg") no-repeat 0.6rem center;
+        background-color: $alabaster;
+        
+        @include tablet {
+            @include textStyleKit(1rem, 1.25rem, $font-regular);
+            width: 35vw;
+            background-size: 1rem;
+            padding: 0.5rem 0 0.5rem 2.7rem;
+        }
+        @include desktop {
+            width: 20vw;
+        }
+
+        &::placeholder {
+            color: $brainFlix-Black;
+            opacity: 1; // FireFox
+        }
+        &:focus {
+            box-shadow: 0 0 0.3rem 0 $brainFlix-Blue;
+            border-color: $brainFlix-Blue;
+            outline: none;
+        }
+}
+
+
+
+
+    &__search-container {
+        display: flex;
+        margin: $mobile-padding 0;
+    }
+
+
+    &__image {
+        //margin-top: 1.5rem;
+        margin-left: 1rem;
+        object-fit: cover;
+        object-position: 15% 50%;
+        border-radius: 50%;
+        max-height: 2.25rem;
+        max-width: 2.25rem;
+
+        @include tablet {
+            position: absolute;
+            right: 2.25rem;
+            width: 100%;
+            height: 100%;
+            max-height: 2.5rem;
+            max-width: 2.5rem;
+        }
+        @include desktop {
+            position: absolute;
+            margin-right: 5rem;
+        }
+    }
+
+    &__upload {
+        height: 2.5rem;
+        text-align: center;
+        border-radius: 0.25rem;
+        border: none;
+        @include textStyleKit(0.8rem, 1.25rem, $font-regular);
+
+        color: $white;
+        background: url("../../assets/icons/upload.svg") no-repeat 0.3rem center;
+        background-color: $brainFlix-Blue;
+
+        @include tablet {
+            margin: 0 4rem 0 1.5rem;
+            min-width: 9.375rem;
+        }
+
+        @include desktop {
+            margin: 0 5.5rem 0 1.5rem;
+        }
+    }
+
+    &__upload:hover {
+        background-color: $brainFlix-DarkBlue;
+    }
+
+}
