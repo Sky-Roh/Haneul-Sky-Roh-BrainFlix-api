@@ -1,0 +1,16 @@
+@use '../../styles//partials/mixins.scss' as *;
+
+.main {
+    &__container {
+        @include desktop {
+            display: flex;
+            flex-direction: row;
+            padding: 0 7rem;
+        }
+    }
+    &__desktop {
+        @include desktop {
+            width: 90%;
+        }
+    }
+}
