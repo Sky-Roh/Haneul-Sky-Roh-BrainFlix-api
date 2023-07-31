@@ -29,5 +29,9 @@
         @include tablet {
             padding: $tablet-side-padding 0;
         }
+        @include desktop {
+            padding: $tablet-side-padding 0 $desktop-tablet-padding 0;
+
+        }
     }
 }
