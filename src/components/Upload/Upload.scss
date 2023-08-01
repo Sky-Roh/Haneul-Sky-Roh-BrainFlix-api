@@ -1,0 +1,170 @@
+@use '../../styles/partials/variables.scss' as *;
+@use '../../styles/partials/fonts.scss' as *;
+@use '../../styles//partials/mixins.scss' as *;
+
+.upload {
+
+    padding: 0 $mobile-padding;
+    @include desktop {
+        padding: 0 7rem;
+    }
+    &__title {
+        @include mobilePageHeader;
+        padding: 1.5rem 0 1rem 0;
+        border-top: 1px solid $mercury;
+
+        @include tablet {
+            border-bottom: 1px solid $mercury;
+        }
+    }
+
+    &__thumbnail-container {
+        @include desktop {
+            width: 50%;
+        }
+    }
+    &__thumbnail {
+        @include textStyleKit(0.8rem, 1.25rem, $font-bold);
+        color: $silver;
+        padding-bottom: $mobile-padding;
+    }
+
+    &__image {
+        width:100%;
+        border-radius: 0.25rem;
+        margin-bottom: $mobile-padding;
+        background-color: $mercury;
+        @include desktop {
+            margin-right: $desktop-tablet-padding;
+
+        }
+
+    }
+    &__desktop {
+        @include desktop {
+            @include flex(row, flex-start, center);
+            margin-top: $desktop-tablet-padding;
+            border-bottom: 1px solid $mercury;
+        }
+    }
+}
+
+.upload-form {
+    @include flex(column, none, none);
+    @include desktop {
+        width: 100%;
+        margin-left: $desktop-tablet-padding;
+    }
+
+    &__title-label, &__desc-label {
+        @include textStyleKit(0.8rem, 1.25rem, $font-bold)
+;        @include flex(column, none, none);
+        color: $silver;
+    }
+
+    &__title-input {
+        height: 2.5rem;
+        padding: 0.8rem;
+        margin-top: $mobile-padding;
+        background-color: $alabaster;
+        border: 1px solid $mercury;
+        border-radius: 0.25rem;
+        width: 100%;
+        overflow-wrap: break-word;
+        &::placeholder {
+            @include mobileBodyCopy;
+            color: $brainFlix-Black;
+            opacity: 1; // FireFox
+        }
+    }
+
+    &__desc-input {
+        height: 5.6rem;
+        padding: 0.8rem;
+        margin-top: $mobile-padding;
+        background-color: $alabaster;
+        border: 1px solid $mercury;
+        border-radius: 0.25rem;
+        width: 100%;
+        overflow-wrap: break-word;
+        &::placeholder {
+            @include mobileBodyCopy;
+            color: $brainFlix-Black;
+            opacity: 1; // FireFox
+        }
+    }
+
+    &__title-label {
+        padding-bottom: $mobile-padding;
+    }
+
+    &__desc-label {
+        @include tablet {
+            padding-bottom: $desktop-tablet-padding;
+            border-bottom: 1px solid $mercury;
+        }
+        @include desktop {
+            border: none;
+        }
+    }
+    &__button-container {
+        @include tablet {
+            @include flex(row, center, flex-end);
+
+        }
+    }
+
+    &__button {
+        @include tablet {
+            width: 50%;
+            @include flex(row, none, none);
+        }
+
+    }
+
+    &__publish-btn {
+        @include textStyleKit(0.8rem, 1.25rem, $font-regular);
+        width: 100%;
+        height: 2.5rem;
+        text-align: center;
+        border-radius: 0.25rem;
+        border: none;
+        color: $white;
+        margin-top: $mobile-padding;
+        background: url(../../assets/icons/publish.svg) no-repeat 0.3rem center;
+        background-color: $brainFlix-Blue;
+
+        &:hover {
+            background-color: $brainFlix-DarkBlue;
+        }
+
+        @include tablet {
+            order: 2;
+        }
+    }
+    &__cancel-btn {
+        @include textStyleKit(0.8rem, 1.25rem, $font-regular);
+        width: 100%;
+        height: 2.5rem;
+        text-align: center;
+        border-radius: 0.25rem;
+        border: none;
+        margin: $mobile-padding 0;
+        color: $brainFlix-Blue;
+        background-color: $white;
+        &:hover {
+            background-color: $brainFlix-DarkBlue;
+            color: $white;
+        }
+        
+        &--link {
+            width:100%;
+        }
+
+        @include tablet {
+            order: 1;
+        }
+
+    }
+}
+     

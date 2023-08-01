@@ -1,18 +1,18 @@
 import "./Header.scss"
 import murugePhoto from "../../assets/images/Mohan-muruge.jpg"
-
 import brainFlixLogo from "../..//assets/logo/BrainFlix-logo.svg";
+import {Link} from 'react-router-dom'
 
 const Header = () => {
     return (
         <header className="header">
             <nav className="nav">
                 <div className="nav__logo">
-                    <a href="/">
+                    <Link to="/">
                         <img className="nav__logo--img"
                             src={brainFlixLogo}
                             alt="logo"/>
-                    </a>
+                    </Link>
                 </div>
 
                 <div className="nav__menu">
@@ -23,7 +23,9 @@ const Header = () => {
                                 src={murugePhoto}
                                 alt="muruge icon"/>
                         </div>
-                        <button className="nav__upload" type="submit">UPLOAD</button>
+                        <Link className="nav__upload--link" to="/video">
+                            <button className="nav__upload" type="submit">UPLOAD</button>
+                        </Link>
                     </form>
                 </div>
 
