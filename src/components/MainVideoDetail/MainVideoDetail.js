@@ -1,7 +1,7 @@
 import "./MainVideoDetail.scss"
 import viewIcon from "../../assets/icons/views.svg"
 import likeIcon from "../../assets/icons/likes.svg"
-import convertDateFormat from "../helpers/helpers.js"
+import convertDateFormat from "../../utils/utils.js"
 import {useState, useEffect} from "react";
 import {useNavigate} from 'react-router-dom'
 import axios from "axios";

@@ -1,4 +1,4 @@
-import convertDateFormat from "../helpers/helpers";
+import convertDateFormat from "../../utils/utils";
 import "./Comment.scss"
 
 const Comment = ({name, comment, likes, timestamp}) => {
@@ -9,10 +9,15 @@ const Comment = ({name, comment, likes, timestamp}) => {
                 <div className="original-comment__img"></div>
                 <div className="original-comment__user-card">
                     <div className="original-comment__head">
-                        <h4 className="original-comment__name">{name}</h4>
-                        <p className="original-comment__date">{convertDateFormat(timestamp)}</p>
+                        <h4 className="original-comment__name">
+                            {name}</h4>
+                        <p className="original-comment__date">
+                            {
+                            convertDateFormat(timestamp)
+                        }</p>
                     </div>
-                    <p className="original-comment__CommentText">{comment}</p>
+                    <p className="original-comment__CommentText">
+                        {comment}</p>
                     <div className="original-comment__img-container"></div>
                 </div>
             </div>

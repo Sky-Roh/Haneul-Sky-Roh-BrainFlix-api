@@ -1,6 +1,6 @@
 import "./App.scss";
 import Header from "./components/Header/Header"
-import Main from "./components/Main/Main"
+import HomePage from "./pages/HomePage/HomePage"
 import UploadPage from "./pages/Page/UploadPage"
 import NotFoundPage from "./pages/Page/NotFoundPage"
 import {BrowserRouter, Routes, Route} from "react-router-dom";
@@ -13,9 +13,9 @@ function App() {
             <Header/>
             <Routes>
                 <Route path="/"
-                    element={<Main/>}/>
+                    element={<HomePage/>}/>
                 <Route path="/videos/:id"
-                    element={<Main/>}/>
+                    element={<HomePage/>}/>
                 <Route path="/videos"
                     element={<UploadPage/>}/>
                 <Route path="*"

@@ -1,11 +1,11 @@
 import {useState, useEffect} from "react";
 import {useNavigate, useParams} from 'react-router-dom'
 import axios from "axios";
-import "./Main.scss"
-import MainVideo from "../MainVideo/MainVideo"
-import MainVideoDetail from "../MainVideoDetail/MainVideoDetail"
-import CommentList from "../CommentList/CommentList"
-import VideoList from "../VideoList/VideoList"
+import "./HomePage.scss"
+import MainVideo from "../../components/MainVideo/MainVideo"
+import MainVideoDetail from "../../components/MainVideoDetail/MainVideoDetail"
+import CommentList from "../../components/CommentList/CommentList"
+import VideoList from "../../components/VideoList/VideoList"
 // // will be changed to axios
 // import videoData from "../../data/videos.json"
 // import videoDetailData from "../../data/video-details.json"
