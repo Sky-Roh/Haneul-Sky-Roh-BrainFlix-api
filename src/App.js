@@ -2,7 +2,8 @@ import "./App.scss";
 import Header from "./components/Header/Header"
 import Main from "./components/Main/Main"
 import UploadPage from "./pages/Page/UploadPage"
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NotFoundPage from "./pages/Page/NotFoundPage"
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 
 // we don't need state for header
@@ -13,8 +14,13 @@ function App() {
             <Routes>
                 <Route path="/"
                     element={<Main/>}/>
+                <Route path="/videos/:id"
+                    element={<Main/>}/>
                 <Route path="/videos"
                     element={<UploadPage/>}/>
+                <Route path="*"
+                    element={<NotFoundPage/>}/>
+
             </Routes>
         </BrowserRouter>
     );
@@ -23,7 +29,7 @@ function App() {
 export default App;
 
 
-    // <div className="App">
-    //     <Header/>
-    //     <Main />
-    // </div>
+// <div className="App">
+//     <Header/>
+//     <Main />
+// </div>

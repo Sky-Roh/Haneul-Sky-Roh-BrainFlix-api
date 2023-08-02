@@ -2,14 +2,25 @@ import "./VideoList.scss"
 import "../Video/Video.scss"
 import Video from "../Video/Video"
 
-const VideoList = ({updateCurrentVideo, videoList}) => {
+const VideoList = ({currentVideo, videoID}) => {
+
+    const updatedVideoList = currentVideo.filter(video => {
+        return videoID !== video.id;
+    })   
+
+    // const updateCurrentData = (videoID) => {
+    //     const currentData = videoDetailData.find(video => {
+    //         return videoID === video.id
+    //     })
+    //     setVideos(currentData);
+    // }
+
     return (
         <section className="video-list">
             <div className="video-list__container">
                 <h2 className="video-list__subtitle">NEXT VIDEOS</h2>
-
                 {
-                videoList.map((video) => (
+                updatedVideoList.map((video) => (
                     <Video key={
                             video.id
                         }
@@ -25,7 +36,7 @@ const VideoList = ({updateCurrentVideo, videoList}) => {
                         image={
                             video.image
                         }
-                        updateVideo={updateCurrentVideo}/>
+                        />
                 ))
             } </div>
 

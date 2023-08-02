@@ -1,7 +1,12 @@
+import axios from "axios";
 import "./CommentForm.scss"
 import murugePhoto from "../../assets/images/Mohan-muruge.jpg"
 
 const CommentForm = ({currentVideo}) => {
+
+    // axios.post().then().catch()
+    // POST /videos/:id/comments -> axios
+    // /videos/:videoId/comments/:commentId
 
     return (
         <section className="comment-conversation">

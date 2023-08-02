@@ -23,7 +23,7 @@ const Header = () => {
                                 src={murugePhoto}
                                 alt="muruge icon"/>
                         </div>
-                        <Link className="nav__upload--link" to="/video">
+                        <Link className="nav__upload--link" to="/videos">
                             <button className="nav__upload" type="submit">UPLOAD</button>
                         </Link>
                     </form>

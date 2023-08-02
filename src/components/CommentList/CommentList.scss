@@ -1,0 +1,23 @@
+@use '../../styles/partials/variables.scss' as *;
+@use '../../styles/partials/fonts.scss' as *;
+@use '../../styles//partials/mixins.scss' as *;
+
+.loading {
+    width: 5rem;
+    height: 5rem;
+    border: 0.8rem solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 0.8rem solid $brainFlix-DarkBlue;
+    animation: spin 2s linear infinite;
+
+    &__container {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 3.75rem;
+    }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

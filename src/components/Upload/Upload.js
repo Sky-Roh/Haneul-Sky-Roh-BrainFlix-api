@@ -22,17 +22,18 @@ const Upload = () => {
                     <label className="upload-form__desc-label" htmlFor='description'>ADD A VIDEO DESCRIPTION
                         <textarea className="upload-form__desc-input" type='text' name='description' id='description' placeholder="Add a description to your video"></textarea>
                     </label>
+                    <div className="upload-form__button-container">
+                        <div className="upload-form__button">
+                            <button className="upload-form__publish-btn">PUBLISH</button>
+                            <Link className="upload-form__cancel-btn--link" to="/">
+                                <button className="upload-form__cancel-btn">CANCEL</button>
+                            </Link>
+                        </div>
+                    </div>
                 </form>
             </div>
 
-            <div className="upload-form__button-container">
-                <div className="upload-form__button">
-                    <button className="upload-form__publish-btn">PUBLISH</button>
-                    <Link className="upload-form__cancel-btn--link" to="/">
-                        <button className="upload-form__cancel-btn">CANCEL</button>
-                    </Link>
-                </div>
-            </div>
+
         </section>
     );
 };

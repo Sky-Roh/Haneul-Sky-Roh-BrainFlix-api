@@ -1,4 +1,5 @@
 import convertDateFormat from "../helpers/helpers";
+import "./Comment.scss"
 
 const Comment = ({name, comment, likes, timestamp}) => {
     return (
