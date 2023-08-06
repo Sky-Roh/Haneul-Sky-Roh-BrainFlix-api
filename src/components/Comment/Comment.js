@@ -1,7 +1,7 @@
 import convertDateFormat from "../../utils/utils";
 import "./Comment.scss"
 
-const Comment = ({name, comment, likes, timestamp}) => {
+const Comment = ({name, comment, timestamp}) => {
     return (
         <section className="original-comment">
 

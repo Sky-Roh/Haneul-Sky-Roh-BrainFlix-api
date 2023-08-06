@@ -18,13 +18,13 @@ const Header = () => {
                 <div className="nav__menu">
                     <form className="nav__form">
                         <div className="nav__search-container">
-                            <input className="nav__search-box" id="search" name="search" type="search" placeholder="Search"/>
+                            <input className="nav__search-box" id="search" name="search" type="search"  placeholder="Search"/>
                             <img className="nav__image"
                                 src={murugePhoto}
                                 alt="muruge icon"/>
                         </div>
                         <Link className="nav__upload--link" to="/videos">
-                            <button className="nav__upload" type="submit">UPLOAD</button>
+                            <button className="nav__upload">UPLOAD</button>
                         </Link>
                     </form>
                 </div>

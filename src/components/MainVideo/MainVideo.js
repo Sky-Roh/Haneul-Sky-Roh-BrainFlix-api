@@ -10,8 +10,7 @@ const MainVideo = ({currentVideo, videoID}) => {
     //     <h1>Loading...</h1>
     // }
 
-    return (
-        
+    return (        
         <section className="video">
             <div className="video__background">
                 <video controls className="video__image"

@@ -1,0 +1,14 @@
+@use '../../styles/partials/global.scss' as *;
+@use '../../styles/partials/variables.scss' as *;
+ @use '../../styles/partials/fonts.scss' as *;
+@use '../../styles//partials/mixins.scss' as *;
+.not-found {
+    margin: 3rem 1rem 0 1rem;
+    font-family: $font-bold;
+    text-align: center;
+    
+    &__des {
+        @extend .not-found;
+        font-size: 1.2rem;
+    }
+}

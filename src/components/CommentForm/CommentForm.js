@@ -1,12 +1,39 @@
-import axios from "axios";
+// import axios from "axios";
+import { useState } from "react";
 import "./CommentForm.scss"
 import murugePhoto from "../../assets/images/Mohan-muruge.jpg"
 
 const CommentForm = ({currentVideo}) => {
+    const [comment, setComment] = useState("");
+
+    const handleChangeComment = (event) => {
+        setComment(event.target.value);
+    }
+
+    const isValid = () => {
+        if (!comment) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+
+    const handleSubmit= (event) => {
+        event.preventDefault();
+
+        if(isValid()) {
+            console.log(event.target.comment.value);
+            alert("COMMENT IS ADDED");
+            event.target.reset()
+        }
+    }
 
     // axios.post().then().catch()
     // POST /videos/:id/comments -> axios
     // /videos/:videoId/comments/:commentId
+
+    // console.log(currentVideo.comments);
 
     return (
         <section className="comment-conversation">
@@ -24,12 +51,13 @@ const CommentForm = ({currentVideo}) => {
                     src={murugePhoto}
                     alt="Mohan Muruge"/>
 
-                <form className="comment-conversation__form">
+                <form className="comment-conversation__form" onSubmit={handleSubmit}>
                     <label className="comment-conversation__label">JOIN THE CONVERSATION
-                        <textarea className="comment-conversation__input comment-conversation__input--textarea" type="text" rows="4" cols="10" id="comment" name="comment" spellCheck="true" placeholder="Add a new comment"></textarea>
+                        <textarea className="comment-conversation__input comment-conversation__input--textarea" type="text" id="comment" name="comment" spellCheck="true" placeholder="Add a new comment"
+                            onChange={handleChangeComment}></textarea>
                     </label>
                     <div className="comment-conversation__button">
-                        <button className="comment-conversation__comment-button">
+                        <button className="comment-conversation__comment-button" type="submit" disabled={!isValid}>
                             COMMENT
                         </button>
                     </div>
