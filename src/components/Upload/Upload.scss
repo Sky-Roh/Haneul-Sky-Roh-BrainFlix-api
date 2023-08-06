@@ -3,30 +3,45 @@
 @use '../../styles//partials/mixins.scss' as *;
 
 .upload {
-
+    border-top: 1px solid $mercury;
     padding: 0 $mobile-padding;
+
+    @include tablet {
+        padding: 0 $tablet-side-padding;
+    }
     @include desktop {
         padding: 0 7rem;
     }
     &__title {
         @include mobilePageHeader;
         padding: 1.5rem 0 1rem 0;
-        border-top: 1px solid $mercury;
 
         @include tablet {
+            @include pageHeader;
+            padding: $tablet-side-padding 0 $desktop-tablet-padding 0;
             border-bottom: 1px solid $mercury;
         }
     }
 
     &__thumbnail-container {
-        @include desktop {
+        @include tablet{
             width: 50%;
+        }
+        @include desktop {
+            border-bottom: 1px solid $mercury;
+            padding-right: $desktop-tablet-padding;
+
         }
     }
     &__thumbnail {
         @include textStyleKit(0.8rem, 1.25rem, $font-bold);
         color: $silver;
         padding-bottom: $mobile-padding;
+        @include tablet {
+            @include textStyleKit(1.1rem, 1.25rem, $font-bold);
+            padding-bottom: 0.5rem;
+        }
+
     }
 
     &__image {
@@ -34,17 +49,16 @@
         border-radius: 0.25rem;
         margin-bottom: $mobile-padding;
         background-color: $mercury;
-        @include desktop {
-            margin-right: $desktop-tablet-padding;
-
+        @include tablet {
+            margin-bottom: $desktop-tablet-padding;
         }
+
 
     }
     &__desktop {
         @include desktop {
             @include flex(row, flex-start, center);
             margin-top: $desktop-tablet-padding;
-            border-bottom: 1px solid $mercury;
         }
     }
 }
@@ -53,13 +67,16 @@
     @include flex(column, none, none);
     @include desktop {
         width: 100%;
-        margin-left: $desktop-tablet-padding;
     }
 
     &__title-label, &__desc-label {
-        @include textStyleKit(0.8rem, 1.25rem, $font-bold)
-;        @include flex(column, none, none);
+        @include textStyleKit(0.8rem, 1.25rem, $font-bold);        
+        @include flex(column, none, none);
         color: $silver;
+
+        @include tablet {
+            @include textStyleKit(1.1rem, 1.25rem, $font-bold);
+        }
     }
 
     &__title-input {
@@ -75,6 +92,10 @@
             @include mobileBodyCopy;
             color: $brainFlix-Black;
             opacity: 1; // FireFox
+        }
+
+        @include tablet {
+            margin-top: 0.5rem;
         }
     }
 
@@ -92,31 +113,52 @@
             color: $brainFlix-Black;
             opacity: 1; // FireFox
         }
+        @include tablet {
+            margin-top: 0.5rem;
+        }
     }
 
     &__title-label {
         padding-bottom: $mobile-padding;
+
+        @include desktop {
+            padding: 0;
+        }
     }
 
     &__desc-label {
         @include tablet {
-            padding-bottom: $desktop-tablet-padding;
+            padding: $desktop-tablet-padding 0;
             border-bottom: 1px solid $mercury;
         }
         @include desktop {
             border: none;
         }
     }
+
+    &__line {
+        display: none;
+        @include desktop {
+            display: inline-block;
+            border-bottom: 1px solid $mercury;
+        }
+    }
+
+
     &__button-container {
         @include tablet {
             @include flex(row, center, flex-end);
-
+            border-top: 1px solid $mercury;
+        }
+        @include desktop {
+            border: none;
         }
     }
 
     &__button {
         @include tablet {
             width: 50%;
+            gap: $desktop-tablet-padding;
             @include flex(row, none, none);
         }
 
@@ -140,6 +182,8 @@
 
         @include tablet {
             order: 2;
+            margin: $desktop-tablet-padding 0;
+
         }
     }
     &__cancel-btn {
@@ -163,6 +207,8 @@
 
         @include tablet {
             order: 1;
+            margin: $desktop-tablet-padding 0;
+
         }
 
     }

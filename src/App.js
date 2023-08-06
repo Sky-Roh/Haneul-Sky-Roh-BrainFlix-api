@@ -2,7 +2,7 @@ import "./App.scss";
 import Header from "./components/Header/Header"
 import HomePage from "./pages/HomePage/HomePage"
 import UploadPage from "./pages/UploadPage/UploadPage"
-import SignedUp from "./components/SignedUp/SignedUp";
+import SignedUp from "./pages/SignedUpPage/SignedUpPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage"
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 
