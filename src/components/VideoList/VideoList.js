@@ -8,13 +8,6 @@ const VideoList = ({currentVideo, videoID}) => {
         return videoID !== video.id;
     })   
 
-    // const updateCurrentData = (videoID) => {
-    //     const currentData = videoDetailData.find(video => {
-    //         return videoID === video.id
-    //     })
-    //     setVideos(currentData);
-    // }
-
     return (
         <section className="video-list">
             <div className="video-list__container">
