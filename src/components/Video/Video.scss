@@ -2,6 +2,9 @@
 @use '../../styles//partials/mixins.scss' as *;
 
 .next-video {
+
+    margin-bottom: $mobile-padding;
+
     &:hover{
         background-color: transparent;
         //column gap //flex
@@ -21,7 +24,6 @@
     &__image {
         display: flex;
         flex-wrap: wrap;
-        padding-bottom: $mobile-padding;
     }
 
     &--image {
