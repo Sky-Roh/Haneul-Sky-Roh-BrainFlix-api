@@ -2,8 +2,11 @@ const express = require('express');
 const router = express.Router();
 const fs = require('fs');
 const {v4: uuidv4} = require('uuid');
+require('dotenv').config();
+const SERVER_URL = process.env.SERVER_URL
+const PORT = process.env.PORT || 5050;
 const videoPath = './data/videos.json'
-const imagePath = '/images/Upload-video-preview.jpg'
+const imagePath = `${SERVER_URL}${PORT}/images/Upload-video-preview.jpg`
 
 const readFile = () => {
     const fileData = fs.readFileSync(videoPath);
