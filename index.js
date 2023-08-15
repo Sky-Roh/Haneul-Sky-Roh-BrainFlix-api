@@ -6,7 +6,6 @@ require('dotenv').config();
 const {CORS_ORIGIN} = process.env;
 const PORT = process.env.PORT || 5050;
 
-
 app.use(cors({origin: CORS_ORIGIN}));
 app.use(express.json());
 app.use(express.static('public'));
